@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made by Mili - Термомозаїка & Handmade</title>
+    <meta name="description" content="Made by Mili - YouTube канал про термомозаїку, бісер та handmade. Дивіться відео, як створювати чудові вироби!">
+    <link rel="icon" type="image/png" href="MadeByMili Avatar.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Декоративні елементи -->
+    <div class="decorations" aria-hidden="true">
+        <span class="deco deco-1">&#9733;</span>
+        <span class="deco deco-2">&#9829;</span>
+        <span class="deco deco-3">&#9733;</span>
+        <span class="deco deco-4">&#9679;</span>
+        <span class="deco deco-5">&#9829;</span>
+        <span class="deco deco-6">&#9679;</span>
+        <span class="deco deco-7">&#9733;</span>
+        <span class="deco deco-8">&#9829;</span>
+    </div>
+
+    <!-- Навігація -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#hero" class="nav-logo">
+                <img src="MadeByMili Avatar.png" alt="Made by Mili" class="nav-avatar">
+                <span>Made by Mili</span>
+            </a>
+            <div class="nav-links">
+                <a href="#videos" data-uk="Відео" data-en="Videos">Відео</a>
+                <a href="#about" data-uk="Про мене" data-en="About me">Про мене</a>
+                <a href="https://www.youtube.com/@MadeByMili" target="_blank" rel="noopener" class="nav-yt-btn">
+                    <svg class="yt-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+                    YouTube
+                </a>
+                <button class="lang-toggle" id="langToggle" title="Switch language">
+                    <span class="lang-flag" id="langFlag">🇺🇦</span>
+                    <span class="lang-code" id="langCode">UK</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero секція -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-avatar-wrap">
+                <img src="MadeByMili Avatar.png" alt="Made by Mili" class="hero-avatar">
+                <div class="hero-avatar-ring"></div>
+            </div>
+            <h1 class="hero-title">Made by Mili</h1>
+            <p class="hero-subtitle" data-uk="Термомозаїка, бісер та handmade з любов'ю ✨" data-en="Perler beads, beading & handmade with love ✨">
+                Термомозаїка, бісер та handmade з любов'ю ✨
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">26</span>
+                    <span class="stat-label" data-uk="відео" data-en="videos">відео</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-uk="44" data-en="44">44</span>
+                    <span class="stat-label" data-uk="підписники" data-en="subscribers">підписники</span>
+                </div>
+            </div>
+            <a href="https://www.youtube.com/@MadeByMili?sub_confirmation=1" target="_blank" rel="noopener" class="hero-btn">
+                <svg class="yt-icon" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+                <span data-uk="Підписатися на канал" data-en="Subscribe to channel">Підписатися на канал</span>
+            </a>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#fff" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L0,120Z"/></svg>
+        </div>
+    </section>
+
+    <!-- Відео секція -->
+    <section id="videos" class="videos-section">
+        <div class="container">
+            <h2 class="section-title" data-uk="Мої відео" data-en="My Videos">
+                <span class="title-icon">&#127916;</span> Мої відео
+            </h2>
+            <p class="section-desc" data-uk="Останні відео з мого YouTube каналу" data-en="Latest videos from my YouTube channel">
+                Останні відео з мого YouTube каналу
+            </p>
+
+            <div class="video-grid" id="videoGrid">
+                <!-- Заповнюється через JavaScript -->
+                <div class="video-loading" id="videoLoading">
+                    <div class="spinner"></div>
+                    <p data-uk="Завантаження відео..." data-en="Loading videos...">Завантаження відео...</p>
+                </div>
+            </div>
+
+            <div class="videos-more">
+                <a href="https://www.youtube.com/@MadeByMili/videos" target="_blank" rel="noopener" class="more-btn" data-uk="Всі відео на YouTube &#8594;" data-en="All videos on YouTube &#8594;">
+                    Всі відео на YouTube &#8594;
+                </a>
+                <a href="https://www.youtube.com/@MadeByMili/shorts" target="_blank" rel="noopener" class="more-btn more-btn-alt" data-uk="Shorts &#9889;" data-en="Shorts &#9889;">
+                    Shorts &#9889;
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Про мене -->
+    <section id="about" class="about-section">
+        <div class="about-wave-top">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path fill="#fff" d="M0,32L48,42.7C96,53,192,75,288,80C384,85,480,75,576,64C672,53,768,43,864,48C960,53,1056,75,1152,80C1248,85,1344,75,1392,69.3L1440,64L1440,0L0,0Z"/></svg>
+        </div>
+        <div class="container about-content">
+            <div class="about-avatar-wrap">
+                <img src="MadeByMili Avatar.png" alt="Mili" class="about-avatar">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title about-title" data-uk="Привіт! Я Мілі!" data-en="Hi! I'm Mili!">
+                    <span class="title-icon">&#128075;</span> Привіт! Я Мілі!
+                </h2>
+                <p data-uk="Мені 10 років і я обожнюю створювати різні речі своїми руками! На моєму YouTube каналі я показую, як робити фігурки з термомозаїки, прикраси з бісеру та інші handmade вироби." data-en="I'm 10 years old and I love making things with my own hands! On my YouTube channel I show how to make figures from perler beads, jewelry from beads and other handmade crafts.">
+                    Мені 10 років і я обожнюю створювати різні речі своїми руками! На моєму YouTube каналі я показую, як робити фігурки з термомозаїки, прикраси з бісеру та інші handmade вироби.
+                </p>
+                <p data-uk="Мої улюблені теми - це персонажі Minecraft, тваринки та яскраві піксельні малюнки. Підписуйтесь на канал і творіть разом зі мною!" data-en="My favorite topics are Minecraft characters, animals and bright pixel art. Subscribe to my channel and create with me!">
+                    Мої улюблені теми - це персонажі Minecraft, тваринки та яскраві піксельні малюнки. Підписуйтесь на канал і творіть разом зі мною!
+                </p>
+                <div class="about-tags">
+                    <span class="tag" data-uk="Термомозаїка" data-en="Perler beads">Термомозаїка</span>
+                    <span class="tag" data-uk="Бісер" data-en="Beading">Бісер</span>
+                    <span class="tag" data-uk="Pixel Art" data-en="Pixel Art">Pixel Art</span>
+                    <span class="tag" data-uk="Minecraft" data-en="Minecraft">Minecraft</span>
+                    <span class="tag" data-uk="Handmade" data-en="Handmade">Handmade</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="MadeByMili Avatar.png" alt="Made by Mili" class="footer-avatar">
+                <span>Made by Mili</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/@MadeByMili" target="_blank" rel="noopener" class="footer-social" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+                </a>
+            </div>
+            <p class="footer-copy" data-uk="&copy; 2025 Made by Mili. Зроблено з &#10084;&#65039;" data-en="&copy; 2025 Made by Mili. Made with &#10084;&#65039;">
+                &copy; 2025 Made by Mili. Зроблено з &#10084;&#65039;
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+name: Update Videos & Deploy
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  update-videos:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install yt-dlp
+        run: pip install yt-dlp
+
+      - name: Fetch videos
+        run: yt-dlp --flat-playlist --dump-json "https://www.youtube.com/@MadeByMili/videos" > /tmp/videos_raw.jsonl || true
+
+      - name: Fetch shorts
+        run: yt-dlp --flat-playlist --dump-json "https://www.youtube.com/@MadeByMili/shorts" > /tmp/shorts_raw.jsonl || true
+
+      - name: Update videos.json
+        run: python scripts/update_videos.py
+
+      - name: Commit and push if changed
+        run: |
+          git diff --quiet videos.json && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add videos.json
+          git commit -m "Update videos.json"
+          git push
+
+  deploy:
+    needs: update-videos
+    if: always() && !cancelled() && !failure()
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-on-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "."
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
